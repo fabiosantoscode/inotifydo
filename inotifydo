@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 # Wait for files to be changed starting on this directory
-inotifywait . -e modify move create delete
+inotifywait . -e modify -e move -e create -e delete
 
 # Evaluate the given command and its arguments (like sudo does)
 eval "$@"
