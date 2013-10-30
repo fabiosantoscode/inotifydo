@@ -1,12 +1,13 @@
 # inotifydo
 
-A tool that waits for files and executes a command when any file is changed.
-
-Requires the `inotifywatch` command (you need to install `inotify`, possibly in
-the `inotify-tools` package in your distro)
+This is a tool that watches files for changes, and executes a command when a change happens.
 
 
 ## How to install
+
+This requires the `inotifywatch` command to be available in your PATH. (you
+need to install `inotify`, possibly in the `inotify-tools` package in your
+distro)
 
 Clone this repo, and execute as root:
 
@@ -17,14 +18,26 @@ This places inotifydo in your `PATH`.
 
 ## How to use
 
-You just have to change directories into where you want to watch the files,
-and then invoke `inotifydo <your command>`.
+`cd` into the folder where your files are, and then invoke `inotifydo <your command>`.
 
 The incantation is as follows, for example if you wish to recompile something
 every time you change a file in the current directory.
 
+        cd ~/my-program/
         inotifydo make all
 
-This is recursive, so changes in `./main.c` will trigger the command, as well as changes in `./src/lib/whatever.c`.
+That's it.
+
+
+## Details, details.
+
+`inotifydo` watches file events recursively.
+
+3 lines of `sh` and a shebang. Simplicity for the win. May this be useful and help you in your endeavours and stuff like that.
+
+## I don't speak legalese
+
+No warranty
 
 license: wtfpl
+
