@@ -27,3 +27,4 @@ every time you change a file in the current directory.
 
 This is recursive, so changes in `./main.c` will trigger the command, as well as changes in `./src/lib/whatever.c`.
 
+license: wtfpl
