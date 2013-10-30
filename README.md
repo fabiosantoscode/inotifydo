@@ -20,8 +20,7 @@ This places inotifydo in your `PATH`.
 
 `cd` into the folder where your files are, and then invoke `inotifydo <your command>`.
 
-The incantation is as follows, for example if you wish to recompile something
-every time you change a file in the current directory.
+Example incantation:
 
         cd ~/my-program/
         inotifydo make all
@@ -35,9 +34,10 @@ That's it.
 
 3 lines of `sh` and a shebang. Simplicity for the win. May this be useful and help you in your endeavours and stuff like that.
 
+
 ## I don't speak legalese
 
-No warranty
+No warranty.
 
 license: wtfpl
 
