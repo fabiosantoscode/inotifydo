@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 # Wait for files to be changed starting on this directory
 inotifywait . -e modify -e move -e create -e delete
