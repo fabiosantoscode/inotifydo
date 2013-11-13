@@ -35,6 +35,20 @@ That's it.
 3 lines of `sh` and a shebang. Simplicity for the win. May this be useful and help you in your endeavours and stuff like that.
 
 
+## But I want to run several commands!
+
+Short of creating a shell script and run that, you can:
+
+        inotifydo command1 \&\& echo 'Command1 completed!'
+
+Just use `\&\&` instead of `&&`, `\;` instead of `;`, etc.
+
+
+## Known issues
+
+No way to filter out dotfiles, no way to throttle commands.
+
+
 ## I don't speak legalese
 
 No warranty.
