@@ -1,11 +1,19 @@
 #!/bin/bash
 
-# Wait for files to be changed starting on this directory
-inotifywait -r -e modify -e move -e create -e delete --exclude="/\." .
+# Support the --twice option, which runs the command without waiting for file changes, then waits for file changes.
+command="$@"
+if [ $1 = "-t" ] || [ $1 = "--twice" ]; then
+    command=( "${@}" )
+    command="${command[*]:1}"
 
-# Evaluate the given command and its arguments (like sudo does)
-eval "$@"
+    eval "$command"
+fi
 
-# Recurse.
-sh $0 "$@"
+while true; do
+    # Wait for files to be changed starting on this directory
+    inotifywait -r -e modify -e move -e create -e delete --exclude="/\." .
+
+    # Evaluate the given command and its arguments (like sudo does)
+    eval "$command"
+done
 
