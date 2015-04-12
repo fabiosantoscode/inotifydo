@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Support the --twice option, which runs the command without waiting for file changes, then waits for file changes.
+# Support the legacy --twice option, now this runs twice by default.
 command="$@"
 if [ $1 = "-t" ] || [ $1 = "--twice" ]; then
     command=( "${@}" )
     command="${command[*]:1}"
-
-    eval "$command"
 fi
+
+eval "$command"
 
 while true; do
     # Wait for files to be changed starting on this directory

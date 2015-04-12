@@ -43,11 +43,11 @@ Short of creating a shell script and run that, you can:
 
 Just use `\&\&` instead of `&&`, `\;` instead of `;`, etc.
 
+This can be used to throttle commands executing too fast for your file changes to be done. Just use `sleep 0.1\; your-command` instead of `your-command`.
 
-## Known issues
+You can also display a notification on your screen when something is done, or a failure notification otherwise, good for running unit tests.
 
-No way to filter out dotfiles, no way to throttle commands.
-
+        inotifydo command1 \&\& notify-send "done" \|\| notify-send "fail"
 
 ## I don't speak legalese
 
