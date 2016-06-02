@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# Support the legacy --twice option, now this runs twice by default.
 command="$@"
-if [ $1 = "-t" ] || [ $1 = "--twice" ]; then
-    command=( "${@}" )
-    command="${command[*]:1}"
-fi
-
 eval "$command"
 
 while true; do
@@ -16,4 +10,3 @@ while true; do
     # Evaluate the given command and its arguments (like sudo does)
     eval "$command"
 done
-
