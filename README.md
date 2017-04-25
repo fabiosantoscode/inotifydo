@@ -5,7 +5,7 @@ This is a tool that watches files for changes, and executes a command when a cha
 
 ## How to install
 
-This requires the `inotifywatch` command to be available in your PATH. (you
+This requires the `inotifywait` command to be available in your PATH. (you
 need to install `inotify`, possibly in the `inotify-tools` package in your
 distro if you're ubuntu-ish)
 
